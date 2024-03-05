@@ -224,11 +224,30 @@ for m_i, c_i in matches:
 # python
 from typing import List, Optional, Tuple
 
-
+# [11, 2, 5, 9, 10, 31], 12 -> (2, 10)
 def get_pair_with_sum(List[int], sum: int) -> Optional[Tuple[int, int]]:
 	# your code here
 	...
+
+lst = [11, 2, 5, 9, 10, 31]
+target = 12
+print(get_pair_with_sum(lst, target))  # (2, 10)
 ```
+
+```php
+// php
+function get_pair_with_sum(array $list, int $sum): ?array {
+	// your code here
+	...
+}
+
+$lst = [11, 2, 5, 9, 10, 31];
+$target = 12;
+print_r(get_pair_with_sum($lst, $target));  // [2, 10]
+```
+
+
+
 
 
 ### 2-2
@@ -240,4 +259,21 @@ def get_pair_with_sum(List[int], sum: int) -> Optional[Tuple[int, int]]:
 def get_pair_with_half_sum(List[int]) -> Optional[Tuple[int, int]]:
 	# your code here
 	...
+
+
+lst = [11, 2, 5, 9, 10, 3]
+print(get_pair_with_half_sum(lst))  # (11, 9)
+```
+
+
+```php
+
+function get_pair_with_half_sum(array $list): ?array {
+	// your code here
+	...
+}
+
+
+$lst = [11, 2, 5, 9, 10, 3];
+print_r(get_pair_with_half_sum($lst));  // [11, 9]
 ```
