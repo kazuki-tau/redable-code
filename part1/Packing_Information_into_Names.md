@@ -19,7 +19,7 @@ users = ["user1", "user2", "user3", "user4", "user5"]
 ```
 
 ```php
-
+// php
 $clubs = array(
 	"club1" => array("user1", "user2"),
 	"club2" => array("user2", "user3", "user4"),
@@ -31,15 +31,19 @@ $users = array("user1", "user2", "user3", "user4", "user5");
 ```
 
 ### Question1. 実装してみる(どの言語でも大丈夫です) 5分くらい
-function(clubs, users) -> {user: club}  
+function(clubs, users) -> {user: ["club"]}  
 
-引数1: clubs, 引数2: users　　
+引数1: clubs, 引数2: users  
 return {key: user, value: list["club"]} の辞書、連想配列、マップなどを返す関数  
+
 ```
-↓こんな感じの帰り値
+↓こんな感じの返り値のイメージ
 {
 	"user1": ["club1", "club3", "club4"],
 	"user2": ["club1", "club2"],
+	.
+	.
+	.
 }
 ```
 
@@ -254,6 +258,17 @@ print_r(get_pair_with_sum($lst, $target));  // [2, 10]
 あるリストの中の２つの数字の合計が、それいがいの他の数字の合計と等しくなるようなペアがあれば返す関数を実装してみる
 例: [11, 2, 5, 9, 10, 3] というリストがある時、この中から2つの数字を足して、それ以外の数字の合計と等しくなるペアを探す
 11 + 9 = 2 + 5 + 10 + 3 なので、(11, 9)
+
+
+
+(２つのペアの合計値) = (残っている数値の合計値)　・・・①
+となるような値がある場合、
+上記の 左辺(２つのペアの合計値) + 右辺(残っている数値の合計値) = (リストの合計値) となる。
+①より、左辺と右辺が等しいので、
+2 × (２つのペアの合計値) = (リスト全体の合計値)
+となる。
+つまり、①の場合、リスト全体の合計値が2の倍数になる。
+
 
 ```python
 def get_pair_with_half_sum(List[int]) -> Optional[Tuple[int, int]]:
