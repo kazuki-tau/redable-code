@@ -18,12 +18,30 @@ clubs = {
 users = ["user1", "user2", "user3", "user4", "user5"]
 ```
 
+```php
+
+$clubs = array(
+	"club1" => array("user1", "user2"),
+	"club2" => array("user2", "user3", "user4"),
+	"club3" => array("user1", "user3", "user4"),
+	"club4" => array("user1", "user3", "user4")
+);
+
+$users = array("user1", "user2", "user3", "user4", "user5");
+```
+
 ### Question1. 実装してみる(どの言語でも大丈夫です) 5分くらい
-function(clubs, users) -> {user: club}
+function(clubs, users) -> {user: club}  
 
-引数1: clubs, 引数2: users
-return {key: user, value: club} の辞書、連想配列、マップなどを返す関数
-
+引数1: clubs, 引数2: users　　
+return {key: user, value: list["club"]} の辞書、連想配列、マップなどを返す関数  
+```
+↓こんな感じの帰り値
+{
+	"user1": ["club1", "club3", "club4"],
+	"user2": ["club1", "club2"],
+}
+```
 
 ### Question2. 以下のコードにバグはありますか？ 1分くらい
 ---
